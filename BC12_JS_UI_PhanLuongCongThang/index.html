@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        .container {
+            width: 60%;
+            border: 2px solid gray;
+            background-color: rgb(128, 206, 180);
+        }
+        
+        .form-group p {
+            visibility: hidden;
+            color: rgb(238, 80, 80);
+        }
+        
+        .container h1 {
+            text-align: center;
+            color: red;
+            text-shadow: 2px 2px gray;
+        }
+        
+        .container span {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container py-3">
+        <h1>JS UI</h1>
+        <div class="form-group">
+            <label for="">Nhập chiều cao của bạn: </label>
+            <input type="text" name="" id="ipChieuCao" class="form-control" placeholder="Nhập chiều cao của ban..." aria-describedby="helpId">
+            <p id="tooltipChieuCao">*Vui lòng nhập chiều cao*</p>
+        </div>
+        <div class="form-group">
+            <label for="">Nhập cân năng của bạn: </label>
+            <input type="text" name="" id="ipCanNang" class="form-control" placeholder="Nhập cân nặng của bạn..." aria-describedby="helpId">
+            <p id="tooltipCanNang">*Vui lòng nhập cân nặng*</p>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" id="btnNhapNhap">Nhấp vào đây</button>
+            <span class="pl-5">
+                Chiều cao:
+                <span class="" id="spanChieuCao">
+
+                </span>; Cân năng:
+            <span class="" id="spanCanNang"></span>
+
+            </span>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <!-- main script -->
+    <script src="./main.js"></script>
+</body>
+
+</html>
