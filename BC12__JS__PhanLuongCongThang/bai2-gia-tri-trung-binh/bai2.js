@@ -1,8 +1,12 @@
+// input
 var i = 1;
 var s = 0;
-while (i <= 5) {
-    var n = parseFloat(prompt("Nhap vao so thuc thu " + i));
-    s += n;
+var n = 5;
+while (i <= n) {
+    var _num = parseFloat(prompt("Nhap vao so thuc thu " + i));
+    // handle
+    s += _num;
     i++;
 }
-document.write("AVG = ", (s / 5));
+// output
+document.write("AVG = ", (s / n));

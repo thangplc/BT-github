@@ -1,3 +1,4 @@
+// input
 var dai = -1;
 var rong = -1;
 do {
@@ -5,13 +6,12 @@ do {
     rong = parseFloat(prompt("Nhap chieu rong: "));
 } while (dai <= 0 || rong <= 0);
 
+// handle
 var p = (dai + rong) * 2;
 var s = dai * rong;
-console.log(p);
-console.log(s);
-console.log(dai);
-console.log(rong);
 
+
+// out put
 document.write("Cheu dai= ", dai);
 document.write("<br>");
 document.write("Chieu rong = ", rong);
