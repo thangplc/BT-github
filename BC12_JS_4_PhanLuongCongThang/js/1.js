@@ -1,8 +1,8 @@
  document.getElementById("sort").onclick = function() {
      var temp;
-     var a = document.getElementById("numOne").value;
-     var b = document.getElementById("numTwo").value;
-     var c = document.getElementById("numThree").value;
+     var a = Number(document.getElementById("numOne").value);
+     var b = Number(document.getElementById("numTwo").value);
+     var c = Number(document.getElementById("numThree").value);
      console.log(a);
      console.log(b);
      console.log(c);
