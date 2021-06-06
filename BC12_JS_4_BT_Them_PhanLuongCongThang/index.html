@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        p {
+            color: rgb(255, 17, 17);
+            font-weight: bold;
+        }
+        
+        .b4-content {
+            /* border: 1px solid red; */
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        hr {
+            width: 100%;
+            height: 5px;
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <!-- bài 1 -->
+        <div class="B1 py-3 mb-5">
+            <h4 style="text-align: center;" class="container"> Bài 1: Viết chương trình nhập vào ngày, tháng, năm (Giả sử nhập đúng, không cần kiểm tra hợp lệ). Tìm ngày, tháng, năm của ngày tiếp theo. Tương tự tìm ngày tháng năm của ngày trước đó.</h4>
+            <div class="container py-5 w-50">
+                <div class="form-group">
+                    <label for="">Nhập ngày</label>
+                    <input type="text" name="" id="b1-day" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <div class="form-group">
+                    <label for="">Nhập tháng</label>
+                    <input type="text" name="" id="b1-month" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <div class="form-group">
+                    <label for="">Nhập năm</label>
+                    <input type="text" name="" id="b1-year" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <p style="display: none;" id="b1-result"></p>
+                <button type="submit" class="btn btn-primary container" id="btn-b1">Check</button>
+
+            </div>
+        </div>
+
+        <hr>
+        <!-- Bài 2 -->
+        <div class="B2 py-3 mt-5 mb-5">
+            <h4 style="text-align: center;" class="container"> Bài 2: Viết chương trình nhập vào tháng, năm. Cho biết tháng đó có bao nhiêu ngày. (bao gồm tháng của năm nhuận).</h4>
+            <div class="container py-5 w-50">
+                <div class="form-group">
+                    <label for="">Nhập tháng</label>
+                    <input type="text" name="" id="month" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <div class="form-group">
+                    <label for="">Nhập năm</label>
+                    <input type="text" name="" id="year" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <p style="display: none;" id="b2-result"></p>
+                <button type="submit" class="btn btn-primary container" id="btn-b2">Check</button>
+
+            </div>
+        </div>
+        <hr>
+        <!-- bài3 -->
+        <div class="B3 mt-5 mb-5">
+            <h4 style="text-align: center;" class="container"> Bài 3: Viết chương trình nhập vào số nguyên có 3 chữ số. In ra cách đọc nó.</h4>
+            <div class="container py-5 w-50">
+                <div class="form-group">
+                    <label for="">Nhập vào số có 3 chữ số</label>
+                    <input type="text" name="" id="num-b3" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+
+                <p style="display: none;" id="b3-result"></p>
+                <button type="submit" class="btn btn-primary container" id="btn-b3">Read</button>
+            </div>
+        </div>
+        <hr>
+        <!-- bài 4 -->
+        <div class="B4  mt-5 mb-5">
+            <h4 style="text-align: center;" class="container"> Bài 4: Cho biết tên và tọa độ nhà của 3 sinh viên. Cho biết tọa độ của trường đại học. Viết chương trình in tên sinh viên xa trường nhất.</h4>
+            <div class="b4-content container py-5">
+                <div class="form-group student1">
+                    <h5 style="text-align: center;">SINH VIÊN 1</h5>
+                    <label for="">Nhập họ và tên</label>
+                    <input type="text" name="" id="sv1" class="form-control" placeholder="" aria-describedby="helpId">
+                    <label for="">Nhập tọa độ x</label>
+                    <input type="text" name="" id="x1" class="form-control" placeholder="" aria-describedby="helpId">
+                    <label for="">Nhập tọa độ y</label>
+                    <input type="text" name="" id="y1" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <div class="form-group student2">
+                    <h5 style="text-align: center;">SINH VIÊN 2</h5>
+                    <label for="">Nhập họ và tên</label>
+                    <input type="text" name="" id="sv2" class="form-control" placeholder="" aria-describedby="helpId">
+                    <label for="">Nhập tọa độ x</label>
+                    <input type="text" name="" id="x2" class="form-control" placeholder="" aria-describedby="helpId">
+                    <label for="">Nhập tọa độ y</label>
+                    <input type="text" name="" id="y2" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <div class="form-group student3">
+                    <h5 style="text-align: center;">SINH VIÊN 3</h5>
+                    <label for="">Nhập họ và tên</label>
+                    <input type="text" name="" id="sv3" class="form-control" placeholder="" aria-describedby="helpId">
+                    <label for="">Nhập tọa độ x</label>
+                    <input type="text" name="" id="x3" class="form-control" placeholder="" aria-describedby="helpId">
+                    <label for="">Nhập tọa độ y</label>
+                    <input type="text" name="" id="y3" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <div class="form-group student3">
+                    <h5 style="text-align: center;">TỌA ĐỘ TRƯỜNG</h5>
+                    <label for="">tọa độ x</label>
+                    <input type="text" name="" id="x-school" class="form-control" placeholder="" aria-describedby="helpId" readonly value="0">
+                    <label for="">tọa độ y</label>
+                    <input type="text" name="" id="y-school" class="form-control" placeholder="" aria-describedby="helpId" readonly value="0">
+                </div>
+            </div>
+            <div class="form-group container">
+                <p id="kc" style="display: none;"></p>
+                <p style="display: none; text-transform: uppercase;" id="b4-result"></p>
+                <button type="submit" class="btn btn-primary container" id="btn-b4">Check</button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="./js/js.js"></script>
+</body>
+
+</html>
