@@ -1,6 +1,162 @@
 /* Bài 1: Viết chương trình nhập vào ngày, tháng, năm (Giả sử nhập đúng, không cần kiểm tra hợp lệ).
 Tìm ngày, tháng, năm của ngày tiếp theo.Tương tự tìm ngày tháng năm của ngày trước đó.
+    INPUT: ngày tháng năm nhập vào(day, month, year)
+    HANDLE: 
+        Kiểm tra điều kiện hợp lệ input:
+            1. Year > 0
+            2. Day:
+                thuộc [1;31](cho các tháng 1, 3, 5, 7, 8, 10, 12);
+                thuộc [1, 30](cho các tháng 4, 6, 9, 11);
+                thuôc [1, 28](cho tháng 2, năm không nhuận)
+                thuộc [1, 29](cho tháng 2, năm nhuận)
+            3. Month: thuộc [1, 12]\
+        Nếu không thỏa 3 điều kiền trên{
+            yêu cầu nhập lai
+        }
+        Nếu hợp lệ{
+            1.Tính ngày hôm truoc
+                day --;
+                nếu day =0 
+                    month --;
+                    nếu month = 0
+                        month = 12
+                        year--;
+                    day = làm theo cách tính ở điều kiện 2
+            2. Tính ngày hôm sau
+                day ++
+                Nếu day > số ngày hợp lệ trong tháng{
+                    day =1
+                    month ++;
+                    Nếu month > 12{
+                        month = 1
+                        year ++
+                    }
+
+                }
+        }
+    OUTPUT: In ra ngày hôm trước và sau vào thẻ nội dung p
 */
+document.getElementById("btn-b1").onclick = function() {
+    debugger
+    // input
+    var day = Number(document.getElementById("b1-day").value);
+    var month = Number(document.getElementById("b1-month").value);
+    var year = Number(document.getElementById("b1-year").value);
+    var ngayHienTai = "Ngày hiện tại: " + day + "/" + month + "/" + year;
+
+    // Kiểm tra năm nhuận
+    var namNhuan = false;
+    if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+        namNhuan = true;
+    }
+
+    // Tính số ngày trong tháng:
+    var d;
+    switch (month) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            d = 31;
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            d = 30;
+            break;
+        case 2:
+            {
+                if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0))
+                    d = 29;
+                else
+                    d = 28;
+                break;
+            }
+    }
+
+    // tạo biến tạm trung gian để tính ngày hôm trước mà không ảnh hưởng tới biến giá trị gốc ban đầu
+    var tempDay = day;
+    var tempMonth = month;
+    var tempYear = year;
+
+    // Kiểm tra ngày tháng năm hợp lệ
+    var hopLe = true;
+    if (year <= 0 || (month < 1 || month > 12) || (day < 1 || day > d)) {
+        hopLe = false;
+    }
+
+    if (hopLe == false) {
+        alert("(BÀI 1) Nhập sai, yêu cầu nhập lại, tháng thuộc [1, 12], năm > 0, ngày của tháng " + tempMonth + " thuôc [1;" + d + "]");
+
+
+    } else {
+        // Tìm ngày hôm trước
+
+        tempDay--;
+        if (tempDay == 0) {
+            tempMonth--;
+            if (tempMonth == 0) {
+                tempMonth = 12;
+                tempYear--;
+            }
+            switch (tempMonth) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    tempDay = 31;
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    tempDay = 30;
+                    break;
+                case 2:
+                    {
+                        if (namNhuan == true) {
+                            tempDay = 29;
+                        } else {
+                            tempDay = 28;
+                        }
+                    }
+            }
+        }
+
+        // Tìm ngày hôm sau
+        day++;
+        if (day > d) {
+            day = 1;
+            month++;
+            if (month > 12) {
+                month = 1;
+                year++;
+            }
+        }
+        var ngayHomTruoc = "Ngày hôm trước: " + tempDay + "/" + tempMonth + "/" + tempYear;
+        var ngayHomSau = "Ngày hôm sau: " + day + "/" + month + "/" + year;
+        // alert(ngayHomTruoc + " ; " + ngayHienTai + " ; " + ngayHomSau);
+        document.getElementById("b1-yesterday").style.display = "block";
+        document.getElementById("b1-present").style.display = "block";
+        document.getElementById("b1-tomorrow").style.display = "block";
+        document.getElementById("b1-yesterday").innerText = ngayHomTruoc;
+        document.getElementById("b1-present").innerText = ngayHienTai;
+        document.getElementById("b1-tomorrow").innerText = ngayHomSau;
+
+    }
+
+
+
+
+
+}
 
 
 /* bài 2: Viết chương trình nhập vào tháng, năm. Cho biết tháng đó có bao nhiêu ngày. (bao gồm tháng của năm nhuận).
