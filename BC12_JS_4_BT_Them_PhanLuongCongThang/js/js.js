@@ -85,7 +85,7 @@ document.getElementById("btn-b1").onclick = function() {
 
     // Kiểm tra ngày tháng năm hợp lệ
     var hopLe = true;
-    if (year <= 0 || (month < 1 || month > 12) || (day < 1 || day > d)) {
+    if (year < 0 || (month < 1 || month > 12) || (day < 1 || day > d)) {
         hopLe = false;
     }
 
@@ -158,7 +158,6 @@ document.getElementById("btn-b1").onclick = function() {
 
 }
 
-
 /* bài 2: Viết chương trình nhập vào tháng, năm. Cho biết tháng đó có bao nhiêu ngày. (bao gồm tháng của năm nhuận).
     input: thang và năm nhập vào từ input
     handle:
@@ -220,8 +219,7 @@ document.getElementById("btn-b2").onclick = function() {
 
 }
 
-/*
-    Bài3: Viết chương trình nhập vào số nguyên có 3 chữ số. In ra cách đọc nó.
+/*Bài3: Viết chương trình nhập vào số nguyên có 3 chữ số. In ra cách đọc nó.
     input: số nguyên có 3 chữ số 
     handle: 
         điều kiện thỏa mãn đầu bài: input không được rỗng , không thuộc [-99, 99] và >1000 và < -1000
