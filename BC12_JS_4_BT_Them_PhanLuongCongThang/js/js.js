@@ -477,7 +477,7 @@ document.getElementById("btn-b4").onclick = function() {
         // So sanh
         var max = kc_1 > kc_2 ? (kc_1 > kc_3 ? kc_1 : kc_3) : ((kc_2 > kc_3 ? kc_2 : kc_3));
 
-        alert("Chuẩn");
+        // alert("Chuẩn");
         console.log("kc1: ", kc_1);
         console.log("kc2: ", kc_2);
         console.log("kc3: ", kc_3);
