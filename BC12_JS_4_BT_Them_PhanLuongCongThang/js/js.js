@@ -85,7 +85,7 @@ document.getElementById("btn-b1").onclick = function() {
 
     // Kiểm tra ngày tháng năm hợp lệ
     var hopLe = true;
-    if (year < 0 || (month < 1 || month > 12) || (day < 1 || day > d)) {
+    if (year < 0 || (month < 1 || month > 12) || (day < 1 || day > d) || (year !== parseInt(year) || day !== parseInt(day) || month !== parseInt(month))) {
         hopLe = false;
     }
 
