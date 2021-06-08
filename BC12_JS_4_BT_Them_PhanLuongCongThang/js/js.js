@@ -50,8 +50,8 @@ document.getElementById("btn-b1").onclick = function() {
         namNhuan = true;
     }
 
-    // Tính số ngày trong tháng:
-    var d;
+    // Tính số ngày trong tháng nhập vào trong input:
+    var dayOfMonth;
     switch (month) {
         case 1:
         case 3:
@@ -60,20 +60,20 @@ document.getElementById("btn-b1").onclick = function() {
         case 8:
         case 10:
         case 12:
-            d = 31;
+            dayOfMonth = 31;
             break;
         case 4:
         case 6:
         case 9:
         case 11:
-            d = 30;
+            dayOfMonth = 30;
             break;
         case 2:
             {
                 if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0))
-                    d = 29;
+                    dayOfMonth = 29;
                 else
-                    d = 28;
+                    dayOfMonth = 28;
                 break;
             }
     }
@@ -132,7 +132,7 @@ document.getElementById("btn-b1").onclick = function() {
 
         // Tìm ngày hôm sau
         day++;
-        if (day > d) {
+        if (day > dayOfMonth) {
             day = 1;
             month++;
             if (month > 12) {
@@ -142,7 +142,6 @@ document.getElementById("btn-b1").onclick = function() {
         }
         var ngayHomTruoc = "Ngày hôm trước: " + tempDay + "/" + tempMonth + "/" + tempYear;
         var ngayHomSau = "Ngày hôm sau: " + day + "/" + month + "/" + year;
-        // alert(ngayHomTruoc + " ; " + ngayHienTai + " ; " + ngayHomSau);
         document.getElementById("b1-yesterday").style.display = "block";
         document.getElementById("b1-present").style.display = "block";
         document.getElementById("b1-tomorrow").style.display = "block";
@@ -177,13 +176,17 @@ document.getElementById("btn-b1").onclick = function() {
 */
 
 document.getElementById("btn-b2").onclick = function() {
+    // Khởi tạo các biến tháng(m), năm(y)
     var m = Number(document.getElementById("month").value);
     var y = Number(document.getElementById("year").value);
-    var d;
-
+    // Khởi tại biến số lượng ngày trong tháng
+    var dayOfMonth;
+    // Kiểm tra hợp lệ
     if (m == "" || y == "" || m <= 0 || m > 12 || y <= 0 || y !== parseInt(y) || m <= 0 || m !== parseInt(m)) {
         alert("(BÀI2)Nhập sai, tháng thuộc [1, 12], năm >0, số nguyên");
-    } else {
+    }
+    // Hợp lệ
+    else {
         switch (m) {
             case 1:
             case 3:
@@ -192,27 +195,27 @@ document.getElementById("btn-b2").onclick = function() {
             case 8:
             case 10:
             case 12:
-                d = 31;
+                dayOfMonth = 31;
                 break;
             case 4:
             case 6:
             case 9:
             case 11:
-                d = 30;
+                dayOfMonth = 30;
                 break;
             case 2:
                 {
                     if (y % 400 == 0 || (y % 4 == 0 && y % 100 != 0))
-                        d = 29;
+                        dayOfMonth = 29;
                     else
-                        d = 28;
+                        dayOfMonth = 28;
                     break;
                 }
             default:
                 alert("Nhập sai, tháng thuộc [1, 12], năm >0, số nguyên");
 
         }
-        document.getElementById("b2-result").innerText = "Tháng " + m + "/" + y + " có " + d + " ngày";
+        document.getElementById("b2-result").innerText = "Tháng " + m + "/" + y + " có " + dayOfMonth + " ngày";
         document.getElementById("b2-result").style.display = 'block';
     }
 
@@ -230,11 +233,11 @@ document.getElementById("btn-b2").onclick = function() {
             tạo biến read = '';
             tạo biến tạm temp = n(tác dụng để đọc số âm)
             if(n input là số âm){
-                n = n * -1(chuyển thành số dương để vào được switch)
+                n = n * -1(chuyển thành số dương để vào được switch chạy ra kết quả dương)
             }
-            tạo các biến hàng chục, đơn vi, trăm, read
+            tạo các biến hangChuc, hangDonVi, hangTram
             switch(hangTram){
-                case1, 2, 3, 4, 5, 6, 7, 8, 9: read += cách đọc tương ứng(Một trăm, Hai, ....)
+                case1, 2, 3, 4, 5, 6, 7, 8, 9: read += cách đọc tương ứng(Một trăm, Hai trăm, Ba trăm, ...)
             }
             switch(hangChục){
                 case 0, 1, 2, 3, 4, 5, 6, 7, 8, 9: read += cách đọc tương ứng(Lẻ, Mười, Hai, Ba, ....)
@@ -242,9 +245,9 @@ document.getElementById("btn-b2").onclick = function() {
             switch(hàng đơn vi){
                 case 0, 1, 2, 3, 4, 5, 6, 7, 8, 9: read += cách đọc tương ứng("", Một, Hai, Ba, ....)
             }
-            if(hangdonvi và hàng chục đều  = 0){
+            if(hangDonVi && hangChuc == 0){
                 switch(hang tram){
-                case 1, 2, 3, 4, 5, 6, 7, 8, 9: read = cách đọc tươn ứng(Một trăm, Hai trăm, Ba trăm, ...)
+                case 1, 2, 3, 4, 5, 6, 7, 8, 9: read = cách đọc tương ứng(Một trăm, Hai trăm, Ba trăm, ...)
                 }
             }
             if(temp là số âm){
@@ -428,22 +431,22 @@ trình in tên sinh viên xa trường nhất.
                 KhoangCach(sv2, Trường) = kc_2 = Sqrt((X_TRUONG - x2)(X_TRUONG - x2)+(Y_TRUONG - y2)*(Y_TRUONG - y2))
                 KhoangCach(sv3, Trường) = kc_3 = Sqrt((X_TRUONG - x3)(X_TRUONG - x3)+(Y_TRUONG - y3)*(Y_TRUONG - y3))
                 So sánh khoảng cách lớn nhất
-                if(kc_1 là max và (kc_1 khác kc_2 và Kc_3)){
+                if(max = Kc_1 và max != khoảng cách các sinh viên còn lại){
                     sv1 xa trường nhất
                 }
-                else if( kc_2 = max && (kc_2 khác kc_1 và Kc_3)){
+                else if( max = kc_2 và max != khoảng cách 2 sinh viên còn lại)){
                     sv2 xa trường nhất
                 }
-                else if( (kc_1 = kc_2 = max) và (kc_1 khác kc_3) ){
+                else if( max = kc_1 = kc_2 và max != kc_3){
                     sv1, sv2 xa trường nhất
                 }
-                else if(kc_1 = kc_3 = max và kc_1 khác kc_2){
+                else if(max = kc_1 = kc_3 và max != kc_2){
                     sv1, sv3 xa trường nhất
                 }
-                 else if(kc_2 = kc_3 = max và kc_2 khác kc_1){
+                 else if(max = kc_3 = kc_2 và max != kc_1){
                     sv2, sv3 xa trường nhất
                 }
-                else(sv3 là max){
+                else(max = kc_3){
                     sv3 xa trường nhất
                 }
             }
@@ -451,37 +454,46 @@ trình in tên sinh viên xa trường nhất.
 */
 document.getElementById("btn-b4").onclick = function() {
     debugger
+    // Giả sử bản đồ là hệ trục tọa độ xOy
+    // Tọa độ sinh viên 1: (x1, y1)
+    // Tọa độ sinh viên 2: (x2, y2)
+    // Tọa độ sinh viên 3: (x3, y3)
+    // Tọa độ trường: (X_SCHOOL, Y_SCHOOL) = (0;0)
     const X_SCHOOL = 0;
     const Y_SCHOOL = 0;
+    // Tạo biến text để chứa nội dung thông báo sinh viên nào xa trường nhất
     var text;
+    // Tạo các biến đã quy ước ở trên
     var x1 = document.getElementById("x1").value;
     var y1 = document.getElementById("y1").value;
     var x2 = document.getElementById("x2").value;
     var y2 = document.getElementById("y2").value;
     var x3 = document.getElementById("x3").value;
     var y3 = document.getElementById("y3").value;
+    // DOM thẻ nội dung thông báo
     var student1 = document.getElementById("sv1").value;
     var student2 = document.getElementById("sv2").value;
     var student3 = document.getElementById("sv3").value;
+    // DOM thuộc tính style của thẻ nội dung để hiển thị kết quả thông báo
     document.getElementById("b4-result").style.display = 'block';
     document.getElementById("kc").style.display = 'block';
-
+    // Xử lý
     if (x1 == '' || x2 == '' || x3 == '' || y1 == '' || y2 == '' || y3 == '' || x1 != Number(x1) || x2 != Number(x2) || x3 != Number(x3) || y1 != Number(y1) || y2 != Number(y2) || y3 != Number(y3)) {
-        alert('Nhập sai ! Yêu cầu số nguyên');
+        alert('Nhập sai ! Yêu cầu nhập số');
     } else {
         var kc_1 = Math.sqrt(Math.pow((X_SCHOOL - x1), 2) + Math.pow((Y_SCHOOL - y1), 2));
         var kc_2 = Math.sqrt(Math.pow((X_SCHOOL - x2), 2) + Math.pow((Y_SCHOOL - y2), 2));
         var kc_3 = Math.sqrt(Math.pow((X_SCHOOL - x3), 2) + Math.pow((Y_SCHOOL - y3), 2));
 
 
-        // So sanh
+        // So sánh các khoảng cách(sử dụng toán tử 3 ngôi)
         var max = kc_1 > kc_2 ? (kc_1 > kc_3 ? kc_1 : kc_3) : ((kc_2 > kc_3 ? kc_2 : kc_3));
-
-        // alert("Chuẩn");
+        // In ra các biến để dễ dang debug
         console.log("kc1: ", kc_1);
         console.log("kc2: ", kc_2);
         console.log("kc3: ", kc_3);
         console.log("max", max);
+        // Xét điều kiện kiểm tra sinh viên nào xa trường nhất?
         if (max == kc_1 && max != kc_2 && max != kc_3) {
             text = student1 + " xa trường nhất";
         } else if (max == kc_2 && max != kc_1 && max != kc_3) {
@@ -496,6 +508,7 @@ document.getElementById("btn-b4").onclick = function() {
             text = student3 + " xa trường nhất";
 
         }
+        // In ra kết quả
         document.getElementById("kc").innerText = student1 + " => trường: " + kc_1 + "; " + student2 + " => trường: " + kc_2 + "; " + student3 + " => trường: " + kc_3;
         document.getElementById("b4-result").innerText = text;
 
