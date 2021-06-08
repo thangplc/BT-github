@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .de-bai {
+            /* border: 1px solid red; */
+            width: 60%;
+            height: 30%;
+        }
+        
+        .b1-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        
+        .b2-content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+        }
+        
+        .result {
+            color: rgb(248, 102, 4);
+            font-weight: bold;
+        }
+        
+        label {
+            font-weight: bold;
+            color: rgb(71, 14, 230);
+        }
+        
+        hr {
+            width: 100%;
+            height: 5px;
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center; color: brown;">BÀI TẬP JS BUỔI 5</h1>
+    <div class="container">
+        <div class="b1 py-5">
+            <div class="de-bai container">
+                <h4>Bài 1</h4>
+                <img src="./b1-js-5.png" alt="" class="img-fluid">
+            </div>
+            <div class="content container b1-content">
+                <div class="form-group">
+                    <label for="">Nhập điểm Toán</label>
+                    <input type="text" name="" id="toan" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <div class="form-group">
+                    <label for="">Nhập điểm Ngữ Văn</label>
+                    <input type="text" name="" id="nguVan" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <div class="form-group">
+                    <label for="">Nhập điểm Anh Văn</label>
+                    <input type="text" name="" id="anhVan" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <div class="form-group">
+                    <label for="">Chọn khu vực</label>
+                    <select class="form-control" name="" id="khuVuc">
+                        <option value="X">X(Không ưu tiên)</option>
+                        <option value="A">A(+2)</option>
+                        <option value="B">B(+1)</option>
+                        <option value="C">C(+0.5)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Chọn loại đối tương</label>
+                    <select class="form-control" name="" id="doiTuong">
+                        <option value="0">0(Đối tượng bình thướng)</option>
+                        <option value="1">1(+2.5)</option>
+                        <option value="2">2(+1.5)</option>
+                        <option value="3">3(+1)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Nhập điểm xét tuyển đậu</label>
+                    <input type="text" name="" id="diemChuan" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+
+            </div>
+            <div class="py-5 result" style="display: none;" id="b1-showResult">
+                <p id="b1-sumMark">Tổng điểm</p>
+                <p id="b1-benchmark">Điểm chuẩn</p>
+                <p id="b1-result">Kết quả</p>
+            </div>
+            <button id="b1-btn" type="submit" class="btn btn-primary container">Xem kết quả</button>
+
+        </div>
+        <hr>
+        <div class="b2 py-5">
+            <div class="de-bai container">
+                <h4>Bài 2</h4>
+                <img src="./b2-js-5.png" alt="" class="img-fluid">
+            </div>
+            <div class="content container b2-content">
+                <div class="form-group">
+                    <label for="">Nhập họ và tên</label>
+                    <input type="text" name="" id="b2-name" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <div class="form-group">
+                    <label for="">Nhập số tiêu thụ điện(Kw)</label>
+                    <input type="text" name="" id="b2-kw" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+            </div>
+            <div class="py-5 result" style="display: none;" id="b2-showResult">
+                <p id="b2-money">Tiền điện: </p>
+            </div>
+            <button id="b2-btn" type="submit" class="btn btn-primary container">Xem kết quả</button>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="./js.js"></script>
+</body>
+
+</html>
