@@ -112,24 +112,7 @@ function tinhTienDien(_soKw) {
     } else if (_soKw >= 350) {
         _tien += 50 * 500 + 50 * 650 + 100 * 850 + 150 * 1100 + (_soKw - 350) * 1300;
     }
-    // switch (_soKw) {
-    //     case (_soKw <= 50):
-    //         _tien += _soKw * 500;
-    //         break;
-    //     case (_soKw > 50 && _soKw <= 100):
-    //         _tien += 50 * 500 + (_soKw - 50) * 650;
-    //         break;
-    //     case (_soKw > 100 && _soKw <= 200):
-    //         _tien += 50 * 500 + 50 * 650 + (_soKw - 100) * 850;
-    //         break;
-    //     case (_soKw > 200 && _soKw <= 350):
-    //         _tien += 50 * 500 + 50 * 650 + 100 * 850 + (_soKw - 200) * 1100;
-    //         break;
-    //     case (_soKw >= 350):
-    //         _tien += 50 * 500 + 50 * 650 + 100 * 850 + 150 * 1100 + (_soKw - 350) * 1300;
-    //         break;
 
-    // }
     return _tien;
 }
 document.getElementById("b2-btn").onclick = function() {
