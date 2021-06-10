@@ -36,14 +36,25 @@
             gap: 25px;
         }
         
-        #b4-result {
-            /* border: 1px solid red; */
-            grid-column: 2 / 5;
-        }
-        
         .result {
             color: rgb(248, 102, 4);
             font-weight: bold;
+        }
+        
+        .newDiv {
+            grid-column: 2/ 7;
+            border: 3px solid gray;
+            height: 300px;
+        }
+        
+        .b4-div {
+            height: 10%;
+            border: 1px solid yellow;
+        }
+        
+        #b4-btn {
+            text-align: center;
+            width: 200px;
         }
     </style>
 </head>
@@ -98,22 +109,20 @@
         <!-- Bài 4 -->
         <div class="B4 py-3 mb-5">
             <h4 style="text-align: center;">Bài 4:Hãy viết chương trình khi click vào button sẽ in ra 10 thẻ div. Nếu div nào vị trí chẵn thì background màu đỏ và lẻ thì background màu xanh.</h4>
-            <div class="container py-5 w-70">
-                <button type="submit" class="btn btn-primary container" id="b4-btn">Tạo</button>
-                <p style="display: block;" id="b4-result" class="result"></p>
+            <div id="b4-newDiv" style="display: none;" class="w-75 container mt-3">
+                <div class="b4-div">1</div>
+                <div class="b4-div">2</div>
+                <div class="b4-div">3</div>
+                <div class="b4-div">4</div>
+                <div class="b4-div">5</div>
+                <div class="b4-div">6</div>
+                <div class="b4-div">7</div>
+                <div class="b4-div">8</div>
+                <div class="b4-div">9</div>
+                <div class="b4-div">10</div>
             </div>
-            <div id="newDiv" style="display: none;">
-                <div id="newDiv1" class="b4-div"></div>
-                <div id="newDiv2" class="b4-div"></div>
-                <div id="newDiv3" class="b4-div"></div>
-                <div id="newDiv4" class="b4-div"></div>
-                <div id="newDiv5" class="b4-div"></div>
-                <div id="newDiv6" class="b4-div"></div>
-                <div id="newDiv7" class="b4-div"></div>
-                <div id="newDiv8" class="b4-div"></div>
-                <div id="newDiv9" class="b4-div"></div>
-                <div id="newDiv10" class="b4-div"></div>
-            </div>
+            <button type="submit" class="btn btn-primary container mt-5" id="b4-btn">Tạo</button>
+
         </div>
     </div>
 

@@ -59,18 +59,34 @@ function tinhGiaiThua(n) {
     return s;
 }
 document.getElementById("b3-btn").onclick = function() {
-    debugger
-    var num = document.getElementById("b3-n").value;
-    document.getElementById("b3-result").style.display = "block";
-    var giaiThua = tinhGiaiThua(num);
-    // var a;
-    // if (num !== parseInt(num)) {
-    //     a = false;
-    // }
-    //console.log(a);
-    if (num == "" || isNaN(num) || num < 0 || num != parseInt(num)) {
-        alert("Bài 3: Nhập sai! Yêu cầu nhập lại! n >=0 , n là số nguyên!");
-    } else {
-        document.getElementById("b3-result").innerText = "GT(" + num + ") = " + giaiThua;
+        var num = document.getElementById("b3-n").value;
+        document.getElementById("b3-result").style.display = "block";
+        var giaiThua = tinhGiaiThua(num);
+        // var a;
+        // if (num !== parseInt(num)) {
+        //     a = false;
+        // }
+        //console.log(a);
+        if (num == "" || isNaN(num) || num < 0 || num != parseInt(num)) {
+            alert("Bài 3: Nhập sai! Yêu cầu nhập lại! n >=0 , n là số nguyên!");
+        } else {
+            document.getElementById("b3-result").innerText = "GT(" + num + ") = " + giaiThua;
+        }
     }
+    //Bai 4:
+var setBackgroundColor = function() {
+    document.getElementById("b4-newDiv").style.display = "block";
+    var listDiv = document.getElementsByClassName("b4-div");
+    listDiv[0].style.backgroundColor = "blue";
+    listDiv[1].style.backgroundColor = "red";
+    listDiv[2].style.backgroundColor = "blue";
+    listDiv[3].style.backgroundColor = "red";
+    listDiv[4].style.backgroundColor = "blue";
+    listDiv[5].style.backgroundColor = "red";
+    listDiv[6].style.backgroundColor = "blue";
+    listDiv[7].style.backgroundColor = "red";
+    listDiv[8].style.backgroundColor = "blue";
+    listDiv[9].style.backgroundColor = "red";
+    listDiv[10].style.backgroundColor = "blue";
 }
+document.getElementById("b4-btn").addEventListener("click", setBackgroundColor);
