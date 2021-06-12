@@ -1,8 +1,24 @@
 // -------------------------------------BÀI 1-------------------------------------------------//
 
 
-function getDiemUuTien(_khuVuc, _doiTuong) {
+function tinhDiemUuTien(_doiTuong, _khuVuc) {
+    debugger
     var _diemUuTien = 0;
+
+    switch (_doiTuong) {
+        case "0":
+            _diemUuTien += 0;
+            break;
+        case "1":
+            _diemUuTien += 2.5;
+            break;
+        case "2":
+            _diemUuTien += 1.5;
+            break;
+        case "3":
+            _diemUuTien += 1;
+            break;
+    }
     switch (_khuVuc) {
         case "X":
             _diemUuTien += 0;
@@ -18,76 +34,70 @@ function getDiemUuTien(_khuVuc, _doiTuong) {
             break;
 
     }
-    switch (_doiTuong) {
-        case "0":
-            _diemUuTien += 0;
-            break;
-        case "1":
-            _diemUuTien += 2.5;
-            break;
-        case "B2":
-            _diemUuTien += 1.5;
-            break;
-        case "3":
-            _diemUuTien += 1;
-            break;
-    }
     return _diemUuTien;
 }
 
-function Sum(a, b, c, d, e) {
-    return Number(a) + Number(b) + Number(c) + getDiemUuTien(d, e);
+function tongDiem(_diemToan, _diemVan, _diemAnh, _doiTuong, _khuVuc) {
+    debugger
+    var _diemUuTen = tinhDiemUuTien(_doiTuong, _khuVuc);
+    return parseFloat(_diemToan) + parseFloat(_diemVan) + parseFloat(_diemAnh) + parseFloat(_diemUuTen);
 }
 
-function B1Result(_diemChuan, _diemToan, _diemVan, _diemAnh, _khuVuc, _doiTuong) {
-    var _sum = Sum(_diemToan, _diemVan, _diemAnh, _khuVuc, _doiTuong);
-    var _text;
+function xetKetQuaTrungTuyen(_diemToan, _diemVan, _diemAnh, _doiTuong, _khuVuc, _diemChuan) {
+    debugger
+    var _tongDiem = tongDiem(_diemToan, _diemVan, _diemAnh, _doiTuong, _khuVuc);
+    var _ketQuaXetTuyen;
     if (_diemAnh == 0 || _diemToan == 0 || _diemVan == 0) {
-        _text = "Kết quả: Không đậu! Cố gắng năm sau!";
+        _ketQuaXetTuyen = "Kết quả: Không đậu! Cố gắng năm sau!";
     } else {
-        _text = (_sum >= _diemChuan) ? "Đậu" : "Không đậu! Cố gắng năm sau!";
+        _ketQuaXetTuyen = (_tongDiem >= _diemChuan) ? "Đậu" : "Không đậu! Cố gắng năm sau!";
     }
-    return _text;
+    return _ketQuaXetTuyen;
 
 }
 
-document.getElementById("b1-btn").onclick = function() {
+document.getElementById("btnXetTuyen").onclick = function() {
     // DOM đối tượng
-    var diemToan = document.getElementById("toan").value;
-    var diemVan = document.getElementById("nguVan").value;
-    var diemAnhVan = document.getElementById("anhVan").value;
+    var diemToan = document.getElementById("diemToan").value;
+    var diemVan = document.getElementById("diemVan").value;
+    var diemAnh = document.getElementById("diemAnh").value;
     var diemChuan = document.getElementById("diemChuan").value;
-    var selectKhuVuc = document.getElementById("khuVuc").value;
-    var selectDoiTuong = document.getElementById("doiTuong").value;
+    var diemDoiTuong = document.getElementById("doiTuong").value;
+    var diemKhuVuc = document.getElementById("khuVuc").value;
 
     debugger
     // alert('chuan');
     var hopLe = true;
 
 
-    if (diemToan == "" || diemAnhVan == "" || diemVan == "" || diemChuan == "") {
+    if (diemToan == "" || diemAnh == "" || diemVan == "" || diemChuan == "") {
         hopLe = false;
-    } else if (diemToan < 0 || diemAnhVan < 0 || diemVan < 0 || diemChuan < 0) {
+    } else if (diemToan < 0 || diemAnh < 0 || diemVan < 0 || diemChuan < 0) {
         hopLe = false;
-    } else if (diemToan > 10 || diemAnhVan > 10 || diemVan > 10 || diemChuan > 34.5) {
+    } else if (diemToan > 10 || diemAnh > 10 || diemVan > 10 || diemChuan > 34.5) {
         hopLe = false;
-    } else if (isNaN(diemToan) || isNaN(diemToan) || isNaN(diemToan)) {
+    } else if (isNaN(diemToan) || isNaN(diemAnh) || isNaN(diemVan)) {
         hopLe = false;
     }
     if (hopLe == true) {
-        document.getElementById("b1-showResult").style.display = "block";
-        document.getElementById("b1-sumMark").innerText = "Tổng điểm: " + Sum(diemToan, diemVan, diemAnhVan, selectKhuVuc, selectDoiTuong);
-        document.getElementById("b1-benchmark").innerText = "Điểm chuẩn: " + diemChuan;
-        document.getElementById("b1-result").innerText = "Kết quả: " + B1Result(diemChuan, diemToan, diemVan, diemAnhVan, selectKhuVuc, selectDoiTuong);
+        var kqTongDiem = tongDiem(diemToan, diemVan, diemAnh, diemDoiTuong, diemKhuVuc);
+        var ketQuaXetTuyen = xetKetQuaTrungTuyen(diemToan, diemVan, diemAnh, diemDoiTuong, diemKhuVuc, diemChuan);
+        document.getElementById("KetQua").style.display = "block";
+        document.getElementById("pTongDiem").innerText = "Tổng điểm: " + kqTongDiem;
+        document.getElementById("pDiemChuan").innerText = "Điểm chuẩn: " + diemChuan;
+        document.getElementById("pKetQuaXetTuyen").innerText = "Kết quả: " + ketQuaXetTuyen;
+
+
+
         console.log("toan: ", diemToan);
         console.log("van:", diemVan);
-        console.log("anh van: ", diemAnhVan);
-        console.log("diem chuan: ", (diemChuan));
-        console.log("khu vuc: ", selectKhuVuc);
-        console.log("doi tuong: ", selectDoiTuong);
-        console.log("tổng: ", Sum(diemToan, diemVan, diemAnhVan, selectKhuVuc, selectDoiTuong));
-        console.log("uu tien: ", getDiemUuTien(selectKhuVuc, selectDoiTuong));
-
+        console.log("anh van: ", diemAnh);
+        console.log("diem chuan: ", diemChuan);
+        console.log("khu vuc: ", diemKhuVuc);
+        console.log("doi tuong: ", diemDoiTuong);
+        console.log("tổng: ", kqTongDiem);
+        console.log("uu tien: ", tinhDiemUuTien(diemKhuVuc, diemDoiTuong));
+        console.log("KQ: ", ketQuaXetTuyen);
 
     } else {
         alert('(BÀI 1): Nhập sai! Yêu cầu nhập lại! Điểm các môn thuộc [0, 10]! Điểm chuẩn thuộc [0, 34.5]');
@@ -101,7 +111,7 @@ function tinhTienDien(_soKw) {
     debugger
     // _soKw = 1;
     var _tien = 0;
-    if (_soKw <= 50) {
+    if (_soKw <= 50 && _soKw >= 0) {
         _tien += _soKw * 500;
     } else if (_soKw > 50 && _soKw <= 100) {
         _tien += 50 * 500 + (_soKw - 50) * 650;
@@ -115,17 +125,24 @@ function tinhTienDien(_soKw) {
 
     return _tien;
 }
-document.getElementById("b2-btn").onclick = function() {
-    var soKW = document.getElementById("b2-kw").value;
-    var hoTen = document.getElementById("b2-name").value;
+document.getElementById("btnTinhTienDien").onclick = function() {
+    var soKWDienTieuThu = document.getElementById("txtSoDienTieuThu").value;
+    var hoTen = document.getElementById("txtTenKhachHang").value;
     debugger
-    console.log(soKW);
-    if (isNaN(soKW) || soKW == "" || hoTen == "" || soKW < 0) {
-        alert('(BÀI 2! Nhập sai! Yêu cầu nhập số >= 0)');
+    console.log(soKWDienTieuThu);
+    if (isNaN(soKWDienTieuThu) || soKWDienTieuThu == "" || hoTen == "" || soKWDienTieuThu < 0) {
+        alert('(BÀI 2! Nhập sai! Yêu cầu nhập số tiêu thụ điện >= 0)');
     } else {
-        var tien = tinhTienDien(soKW);
-        document.getElementById("b2-showResult").style.display = "block";
-        document.getElementById("b2-money").innerText = "Tiền điện: " + tien + " VND";
+        var tienDien = tinhTienDien(soKWDienTieuThu).toLocaleString();
+        document.getElementById("tienDien").style.display = "block";
+        document.getElementById("spanTienDien").innerText = tienDien + " VNĐ";
+        document.getElementById("spanTenKhachHang").innerText = hoTen;
 
+        // hiển thị thời gian hiện tại
+        var today = new Date();
+        var date = today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var dateTime = date + "  " + time;
+        document.getElementById("spanThoiGian").innerHTML = dateTime;
     }
-}
+};

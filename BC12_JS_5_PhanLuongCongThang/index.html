@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>JS buổi 5</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -57,15 +57,15 @@
             <div class="content container b1-content">
                 <div class="form-group">
                     <label for="">Nhập điểm Toán</label>
-                    <input type="text" name="" id="toan" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input type="text" name="" id="diemToan" class="form-control" placeholder="" aria-describedby="helpId">
                 </div>
                 <div class="form-group">
                     <label for="">Nhập điểm Ngữ Văn</label>
-                    <input type="text" name="" id="nguVan" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input type="text" name="" id="diemVan" class="form-control" placeholder="" aria-describedby="helpId">
                 </div>
                 <div class="form-group">
                     <label for="">Nhập điểm Anh Văn</label>
-                    <input type="text" name="" id="anhVan" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input type="text" name="" id="diemAnh" class="form-control" placeholder="" aria-describedby="helpId">
                 </div>
                 <div class="form-group">
                     <label for="">Chọn khu vực</label>
@@ -91,12 +91,12 @@
                 </div>
 
             </div>
-            <div class="py-5 result" style="display: none;" id="b1-showResult">
-                <p id="b1-sumMark">Tổng điểm</p>
-                <p id="b1-benchmark">Điểm chuẩn</p>
-                <p id="b1-result">Kết quả</p>
+            <div class="py-5 result" style="display: none;" id="KetQua">
+                <p id="pTongDiem">Tổng điểm</p>
+                <p id="pDiemChuan">Điểm chuẩn</p>
+                <p id="pKetQuaXetTuyen">Kết quả</p>
             </div>
-            <button id="b1-btn" type="submit" class="btn btn-primary container">Xem kết quả</button>
+            <button id="btnXetTuyen" type="submit" class="btn btn-primary container">Xem kết quả</button>
 
         </div>
         <hr>
@@ -108,17 +108,22 @@
             <div class="content container b2-content">
                 <div class="form-group">
                     <label for="">Nhập họ và tên</label>
-                    <input type="text" name="" id="b2-name" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input type="text" name="" id="txtTenKhachHang" class="form-control" placeholder="" aria-describedby="helpId">
                 </div>
                 <div class="form-group">
                     <label for="">Nhập số tiêu thụ điện(Kw)</label>
-                    <input type="text" name="" id="b2-kw" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input type="text" name="" id="txtSoDienTieuThu" class="form-control" placeholder="" aria-describedby="helpId">
                 </div>
             </div>
-            <div class="py-5 result" style="display: none;" id="b2-showResult">
-                <p id="b2-money">Tiền điện: </p>
+            <div class="py-5 result" style="display: none;" id="tienDien">
+                Tên khách hàng:
+                <span id="spanTenKhachHang"></span>
+                <br> Tiền điện:
+                <span id="spanTienDien"></span>
+                <br> Thời gian
+                <span id="spanThoiGian"></span>
             </div>
-            <button id="b2-btn" type="submit" class="btn btn-primary container">Xem kết quả</button>
+            <button id="btnTinhTienDien" type="submit" class="btn btn-primary container">Xem kết quả</button>
         </div>
     </div>
     <!-- Optional JavaScript -->
