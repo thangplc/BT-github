@@ -47,9 +47,10 @@
             height: 300px;
         }
         
-        .b4-div {
+        .new-div {
             height: 10%;
             border: 1px solid yellow;
+            color: #fff;
         }
         
         #b4-btn {
@@ -66,8 +67,8 @@
         <div class="B1 py-3 mb-5">
             <h4 style="text-align: center;">Bài 1: Tìm số nguyên dương nhỏ nhất sao cho: 1 + 2 + … + n > 10000</h4>
             <div class="container py-5 w-50">
-                <p style="display: none;" id="b1-result" class="result"></p>
-                <button type="submit" class="btn btn-primary container" id="b1-btn">Tìm</button>
+                <p style="display: none;" id="resultSoNhoNhat" class="result"></p>
+                <button type="submit" class="btn btn-primary container" id="btnTimSoNhoNhat">Tìm</button>
             </div>
         </div>
         <hr>
@@ -79,14 +80,14 @@
             <div class="container py-5 w-50">
                 <div class="form-group">
                     <label for="">Nhập n</label>
-                    <input type="text" name="" id="b2-n" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input type="text" name="" id="b2-num" class="form-control" placeholder="" aria-describedby="helpId">
                 </div>
                 <div class="form-group">
                     <label for="">Nhập x</label>
                     <input type="text" name="" id="b2-x" class="form-control" placeholder="" aria-describedby="helpId">
                 </div>
-                <p style="display: none;" id="b2-result" class="result"></p>
-                <button type="submit" class="btn btn-primary container" id="b2-btn">Tính</button>
+                <p style="display: none;" id="resultTongBieuThuc" class="result"></p>
+                <button type="submit" class="btn btn-primary container" id="btnTinhTongBieuThuc">Tính</button>
             </div>
         </div>
         <hr>
@@ -98,10 +99,10 @@
             <div class="container py-5 w-50 ">
                 <div class="form-group">
                     <label for="">Nhập n</label>
-                    <input type="text" name="" id="b3-n" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input type="text" name="" id="b3-num" class="form-control" placeholder="" aria-describedby="helpId">
                 </div>
-                <p style="display: none;" id="b3-result" class="result"></p>
-                <button type="submit" class="btn btn-primary container" id="b3-btn">Tính</button>
+                <p style="display: none;" id="resultGiaiThua" class="result"></p>
+                <button type="submit" class="btn btn-primary container" id="btnTinhGiaiThua">Tính</button>
             </div>
         </div>
         <hr>
@@ -110,18 +111,18 @@
         <div class="B4 py-3 mb-5">
             <h4 style="text-align: center;">Bài 4:Hãy viết chương trình khi click vào button sẽ in ra 10 thẻ div. Nếu div nào vị trí chẵn thì background màu đỏ và lẻ thì background màu xanh.</h4>
             <div id="b4-newDiv" style="display: none;" class="w-75 container mt-3">
-                <div class="b4-div">1</div>
-                <div class="b4-div">2</div>
-                <div class="b4-div">3</div>
-                <div class="b4-div">4</div>
-                <div class="b4-div">5</div>
-                <div class="b4-div">6</div>
-                <div class="b4-div">7</div>
-                <div class="b4-div">8</div>
-                <div class="b4-div">9</div>
-                <div class="b4-div">10</div>
+                <div class="new-div">1</div>
+                <div class="new-div">2</div>
+                <div class="new-div">3</div>
+                <div class="new-div">4</div>
+                <div class="new-div">5</div>
+                <div class="new-div">6</div>
+                <div class="new-div">7</div>
+                <div class="new-div">8</div>
+                <div class="new-div">9</div>
+                <div class="new-div">10</div>
             </div>
-            <button type="submit" class="btn btn-primary container mt-5" id="b4-btn">Tạo</button>
+            <button type="submit" class="btn btn-primary container mt-5" id="btnTaoDiv">Tạo Div</button>
 
         </div>
     </div>

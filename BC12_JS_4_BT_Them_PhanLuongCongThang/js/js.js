@@ -493,21 +493,54 @@ document.getElementById("btn-b4").onclick = function() {
         console.log("kc2: ", kc_2);
         console.log("kc3: ", kc_3);
         console.log("max", max);
-        // Xét điều kiện kiểm tra sinh viên nào xa trường nhất?
-        if (max == kc_1 && max != kc_2 && max != kc_3) {
-            text = student1 + " xa trường nhất";
-        } else if (max == kc_2 && max != kc_1 && max != kc_3) {
-            text = student2 + " xa trường nhất";
-        } else if (max == kc_1 && max == kc_2 && max != kc_3) {
-            text = student1 + " và " + student2 + " xa trường nhất";
-        } else if (max == kc_2 && max == kc_3 && max != kc_1) {
-            text = student2 + " và " + student3 + " xa trường nhất";
-        } else if (max == kc_3 && max == kc_1 && max != kc_2) {
-            text = student1 + " và " + student3 + " xa trường nhất";
-        } else {
-            text = student3 + " xa trường nhất";
+        switch (max) {
+            case (max == kc_1 && max != kc_2 && max != kc_3):
+                {
+                    text = student1 + " xa trường nhất";
+                    break;
+                }
+            case (max == kc_2 && max != kc_1 && max != kc_3):
+                {
+                    text = student2 + " xa trường nhất";
+                    break;
+                }
+            case (max == kc_1 && max == kc_2 && max != kc_3):
+                {
+                    text = student1 + " và " + student2 + " xa trường nhất";
+                    break;
+                }
+            case (max == kc_2 && max == kc_3 && max != kc_1):
+                {
+                    text = student2 + " và " + student3 + " xa trường nhất";
+                    break;
+                }
+            case (max == kc_3 && max == kc_1 && max != kc_2):
+                {
+                    text = student1 + " và " + student3 + " xa trường nhất";
+                    break;
+                }
+            default:
+                {
+                    text = student3 + " xa trường nhất";
+                    break;
+                }
 
         }
+        // Xét điều kiện kiểm tra sinh viên nào xa trường nhất?
+        // if (max == kc_1 && max != kc_2 && max != kc_3) {
+        //     text = student1 + " xa trường nhất";
+        // } else if (max == kc_2 && max != kc_1 && max != kc_3) {
+        //     text = student2 + " xa trường nhất";
+        // } else if (max == kc_1 && max == kc_2 && max != kc_3) {
+        //     text = student1 + " và " + student2 + " xa trường nhất";
+        // } else if (max == kc_2 && max == kc_3 && max != kc_1) {
+        //     text = student2 + " và " + student3 + " xa trường nhất";
+        // } else if (max == kc_3 && max == kc_1 && max != kc_2) {
+        //     text = student1 + " và " + student3 + " xa trường nhất";
+        // } else {
+        //     text = student3 + " xa trường nhất";
+
+        // }
         // In ra kết quả
         document.getElementById("kc").innerText = student1 + " => trường: " + kc_1 + "; " + student2 + " => trường: " + kc_2 + "; " + student3 + " => trường: " + kc_3;
         document.getElementById("b4-result").innerText = text;
