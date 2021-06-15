@@ -61,7 +61,7 @@
         <div class="B1 py-3 mb-5">
             <h4 style="text-align: center;">Bài 1: Tìm số nguyên dương nhỏ nhất sao cho: 1 + 2 + … + n > 10000</h4>
             <div class="container py-5 w-50">
-                <p style="display: none;" id="resultSoNhoNhat" class="result"></p>
+                <p style="display: none;" id="kqSoNhoNhat" class="result"></p>
                 <button type="submit" class="btn btn-primary container" id="btnTimSoNhoNhat">Tìm số nhỏ nhất</button>
             </div>
         </div>
@@ -72,15 +72,16 @@
             <h4 style="text-align: center;">Bài 2: Viết chương trình nhập vào 2 số x, n tính tổng: S(n) = x + x^2 + x^3 + … + x^n (Sử dụng vòng lặp và hàm)
             </h4>
             <div class="container py-5 w-50">
-                <div class="form-group">
-                    <label for="">Nhập n</label>
-                    <input type="text" name="" id="b2-num" class="form-control" placeholder="" aria-describedby="helpId">
-                </div>
+
                 <div class="form-group">
                     <label for="">Nhập x</label>
                     <input type="text" name="" id="b2-x" class="form-control" placeholder="" aria-describedby="helpId">
                 </div>
-                <p style="display: none;" id="resultTongBieuThuc" class="result"></p>
+                <div class="form-group">
+                    <label for="">Nhập n(n là số nguyên dương)</label>
+                    <input type="text" name="" id="b2-num" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <p style="display: none;" id="kqTongBieuThuc" class="result"></p>
                 <button type="submit" class="btn btn-primary container" id="btnTinhTongBieuThuc">Tính biểu thức</button>
             </div>
         </div>
@@ -92,10 +93,10 @@
             <h4 style="text-align: center;">Bài 3: Nhập vào n. Tính giai thừa 1*2*...n</h4>
             <div class="container py-5 w-50 ">
                 <div class="form-group">
-                    <label for="">Nhập n</label>
+                    <label for="">Nhập n(n là số nguyên)</label>
                     <input type="text" name="" id="b3-num" class="form-control" placeholder="" aria-describedby="helpId">
                 </div>
-                <p style="display: none;" id="resultGiaiThua" class="result"></p>
+                <p style="display: none;" id="kqGiaiThua" class="result"></p>
                 <button type="submit" class="btn btn-primary container" id="btnTinhGiaiThua">Tính giai thừa</button>
             </div>
         </div>

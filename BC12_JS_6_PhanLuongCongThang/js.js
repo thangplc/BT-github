@@ -9,36 +9,37 @@ function timSoNhoNhat() {
     return min;
 }
 document.getElementById("btnTimSoNhoNhat").onclick = function() {
-    document.getElementById("resultSoNhoNhat").style.display = "block";
+    document.getElementById("kqSoNhoNhat").style.display = "block";
     var min = timSoNhoNhat();
-    document.getElementById("resultSoNhoNhat").innerText = "Số n nhỏ nhất thỏa mãn (1+2+3+...+ n>10000): " + min;
+    document.getElementById("kqSoNhoNhat").innerText = "Số n nhỏ nhất thỏa mãn (1+2+3+...+ n>10000): " + min;
 };
 // Bài 2
 function tinhBieuThuc(x, n) {
-    var sum = 0;
+    debugger
+    var tong = 0;
     var i = 1;
     var tich = 1;
-    // if (x == 0 && n == 0) {
-    //     s = 1;
-    // }
+    if (x == 0) {
+        tong = 0;
+    }
     while (i <= n) {
         tich *= x;
-        sum += tich;
+        tong += tich;
         i++;
     }
-    return sum;
+    return tong;
 }
 document.getElementById("btnTinhTongBieuThuc").onclick = function() {
     debugger
-    var num = document.getElementById("b2-num").value;
-    var x = document.getElementById("b2-x").value;
-    document.getElementById("resultTongBieuThuc").style.display = "block";
-    var sum = 0;
-    if (num <= 0 || x == "" || num == "" || isNaN(num) || isNaN(x) || num != parseInt(num)) {
+    var num = Number(document.getElementById("b2-num").value);
+    var x = Number(document.getElementById("b2-x").value);
+    document.getElementById("kqTongBieuThuc").style.display = "block";
+    var giaTriBieuThuc = 0;
+    if (num <= 0 || num === "" || num !== parseInt(num) || x === "") {
         alert('Bài 2: Nhập sai! n >0, là số nguyên; x là số');
     } else {
-        sum += tinhBieuThuc(x, num);
-        document.getElementById("resultTongBieuThuc").innerText = "S(" + num + ", " + x + ") = " + sum;
+        giaTriBieuThuc += tinhBieuThuc(x, num);
+        document.getElementById("kqTongBieuThuc").innerText = "S(" + num + ", " + x + ") = " + giaTriBieuThuc;
 
     }
 }
@@ -59,18 +60,14 @@ function tinhGiaiThua(num) {
     return giaiThua;
 }
 document.getElementById("btnTinhGiaiThua").onclick = function() {
-    var num = document.getElementById("b3-num").value;
-    document.getElementById("resultGiaiThua").style.display = "block";
+    var num = Number(document.getElementById("b3-num").value);
+    document.getElementById("kqGiaiThua").style.display = "block";
     var giaiThua = tinhGiaiThua(num);
-    // var a;
-    // if (num !== parseInt(num)) {
-    //     a = false;
-    // }
-    //console.log(a);
-    if (num == "" || isNaN(num) || num < 0 || num != parseInt(num)) {
-        alert("Bài 3: Nhập sai! Yêu cầu nhập lại! n >=0 , n là số nguyên!");
+
+    if (num === "" || num < 0 || num !== parseInt(num)) {
+        alert("Bài 3: Nhập sai! Yêu cầu nhập lại! n >=0 , num là số nguyên dương!");
     } else {
-        document.getElementById("resultGiaiThua").innerText = "GT(" + num + ") = " + giaiThua;
+        document.getElementById("kqGiaiThua").innerText = "Kết quả: " + num + "! = " + giaiThua;
     }
 };
 //Bai 4:
