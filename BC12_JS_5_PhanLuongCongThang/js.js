@@ -145,4 +145,5 @@ document.getElementById("btnTinhTienDien").onclick = function() {
         var dateTime = date + "  " + time;
         document.getElementById("spanThoiGian").innerHTML = dateTime;
     }
+
 };

@@ -1,3 +1,4 @@
+"use strict";
 // Bài 1
 function timSoNhoNhat() {
     var sum = 0;
@@ -19,7 +20,7 @@ function tinhBieuThuc(x, n) {
     var tong = 0;
     var i = 1;
     var tich = 1;
-    if (x == 0) {
+    if (x === 0) {
         tong = 0;
     }
     while (i <= n) {
@@ -50,7 +51,7 @@ function tinhGiaiThua(num) {
 
     var giaiThua = 1;
     var i = 1;
-    if (num == 0) {
+    if (num === 0) {
         giaiThua = 1;
     }
     while (i <= num) {
