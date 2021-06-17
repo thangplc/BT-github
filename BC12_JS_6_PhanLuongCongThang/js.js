@@ -15,20 +15,22 @@ document.getElementById("btnTimSoNhoNhat").onclick = function() {
     document.getElementById("kqSoNhoNhat").innerText = "Số n nhỏ nhất thỏa mãn (1+2+3+...+ n>10000): " + min;
 };
 // Bài 2
-function tinhBieuThuc(x, n) {
+function tinhBieuThuc(parameter1, parameter2) {
     debugger
-    var tong = 0;
-    var i = 1;
-    var tich = 1;
-    if (x === 0) {
-        tong = 0;
+    // parameter1: n
+    // parameter2: x
+    var result = 0;
+    var index = 1;
+    var multi = 1;
+    if (parameter2 === 0) {
+        result = 0;
     }
-    while (i <= n) {
-        tich *= x;
-        tong += tich;
-        i++;
+    while (index <= parameter1) {
+        multi *= parameter2;
+        result += multi;
+        index++;
     }
-    return tong;
+    return result;
 }
 document.getElementById("btnTinhTongBieuThuc").onclick = function() {
     debugger
@@ -39,7 +41,7 @@ document.getElementById("btnTinhTongBieuThuc").onclick = function() {
     if (num <= 0 || num === "" || num !== parseInt(num) || x === "") {
         alert('Bài 2: Nhập sai! n >0, là số nguyên; x là số');
     } else {
-        giaTriBieuThuc += tinhBieuThuc(x, num);
+        giaTriBieuThuc += tinhBieuThuc(num, x);
         document.getElementById("kqTongBieuThuc").innerText = "S(" + num + ", " + x + ") = " + giaTriBieuThuc;
 
     }
