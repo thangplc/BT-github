@@ -30,7 +30,7 @@ function kiemTraDSRong(danhSach) {
 var themMoiSoNguyen = function() {
     var soNguyen = Number(queSel("#txtSoNguyen").value);
 
-    if ((isNaN(soNguyen) || soNguyen !== parseInt(soNguyen) || soNguyen == "") && soNguyen !== 0) {
+    if ((isNaN(soNguyen) || soNguyen !== parseInt(soNguyen) || soNguyen == '')) {
         alert("Nhập giá trị là số nguyên");
     } else {
         // kích thước hàng table số nguyên
@@ -91,7 +91,7 @@ function demSoDuong() {
 // Tìm số nhỏ nhất
 function timSoNhoNhat() {
     if (kiemTraDSRong(dSachSoNguyen)) {
-        queSel("#spanKetQua").innerHTML = "Danh sách rỗng!"
+        queSel("#spanKetQua").innerHTML = "Dane sách rỗng!"
     } else {
         var soNhoNhat = dSachSoNguyen[0];
         var i = 0;
@@ -250,7 +250,11 @@ function soSanhSLAmDuong() {
 
 }
 
+// Đổi chỗ 2 vị trí 
+// Hàm đổi button bình thường thành button sự kiện modal
+// function doiButtonThanhButtonModal() {
 
+// }
 
 // Lựa chon thao tác
 function thucHienThaoTac() {

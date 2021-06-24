@@ -17,15 +17,37 @@
     <h3 class="text-center text-danger py-3">Bài tập JS Buổi 7, 8</h3>
     <div class="content container">
         <div class="action">
-            <div class="action_add container py-5">
+            <!-- thêm mới số nguyên -->
+            <div class="action_item action_addInterger container py-5">
                 <div class="form-group">
                     <label for="">Nhập số nguyên</label>
                     <input type="text" class="form-control" name="" id="txtSoNguyen" aria-describedby="helpId" placeholder="">
                 </div>
                 <button type="submit" class="btn btn-success container" id="btnThemMoi" onclick="themMoiSoNguyen()">Thêm
-                    mới</button>
+                    mới số nguyên</button>
             </div>
-            <div class="action_ask container pt-2">
+            <!-- thêm mới số thực -->
+            <div class="action_item action_addFloat container py-5">
+                <div class="form-group">
+                    <label for="">Nhập số thực</label>
+                    <input type="text" class="form-control" name="" id="txtSoThuc" aria-describedby="helpId" placeholder="">
+                </div>
+                <button type="submit" class="btn btn-success container" id="btnThemMoi" onclick="">Thêm
+                    mới số thực</button>
+            </div>
+            <!-- Hoán vị 2 giá trị -->
+            <div class="action_item action_swap container">
+                <div class="form-group">
+                    <label for="">Vị trí 1</label>
+                    <input type="text" class="form-control" name="" id="txtViTri1" aria-describedby="helpId" placeholder="">
+                    <label for="">Vị trí 2</label>
+                    <input type="text" class="form-control" name="" id="txtViTri2" aria-describedby="helpId" placeholder="">
+                </div>
+                <button type="submit" class="btn btn-success container" id="btnHoanVi" onclick="">Hoán
+                    vị 2 vị trí</button>
+            </div>
+            <!-- Thao tác -->
+            <div class="action_item action_ask container pt-2">
                 <div class="form-group">
                     <label for="">Thao tác</label>
                     <select class="form-control" name="" id="thaoTac">
@@ -35,10 +57,10 @@
                         <option value="3">Số nhỏ nhất</option>
                         <option value="4">Số dương nhỏ nhất</option>
                         <option value="5">Số chẵn cuối cùng</option>
-                        <option value="6">Đổi chỗ 2 giá trị</option>
+                        <!-- <option value="6">Đổi chỗ 2 giá trị</option> -->
                         <option value="7">Sắp xếp tăng dần</option>
                         <option value="8">Số nguyên tố đầu tiên</option>
-                        <option value="9">Nhập mảng số thực, đếm số nguyên</option>
+                        <option value="9">Đếm số nguyên</option>
                         <option value="10">So sánh số lượng số âm dương</option>
                     </select>
                     <button type="submit" class="btn btn-success container my-3" id="btnThucHien" onclick="thucHienThaoTac()">Thực
@@ -48,11 +70,12 @@
                         <span id="spanKetQua"></span>
                     </div>
                 </div>
+
             </div>
 
         </div>
         <div class="list ml-3 pt-4 text-center px-3">
-            <p>Danh sách mảng số nguyên</p>
+            <p>Danh sách mảng số</p>
             <table border="4" id="tblDSSoNguyen">
                 <tr>
                     <th>Index</th>
@@ -61,6 +84,7 @@
             </table>
         </div>
     </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
