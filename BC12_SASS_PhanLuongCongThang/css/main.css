@@ -1,0 +1,35 @@
+/* GLOBAL */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    /* giu nguyen kich thuoc cua the khi them padding */
+    box-sizing: border-box;
+    font-family: Oswald, sans-serif;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    /* ken trinh duyet */
+    /* scroll-behavior: smooth; */
+}
+
+.clear {
+    clear: both;
+}
+
+li {
+    list-style: none;
+}
+
+input,
+button {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
