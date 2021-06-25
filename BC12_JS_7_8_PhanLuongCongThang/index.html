@@ -32,8 +32,10 @@
                     <label for="">Nhập số thực</label>
                     <input type="text" class="form-control" name="" id="txtSoThuc" aria-describedby="helpId" placeholder="">
                 </div>
-                <button type="submit" class="btn btn-success container" id="btnThemMoi" onclick="">Thêm
-                    mới số thực</button>
+                <button type="submit" class="btn btn-success container" id="btnThemMoi" onclick="themMoiSoThuc()">Thêm
+                    mới số
+                    thực</button>
+
             </div>
             <!-- Hoán vị 2 giá trị -->
             <div class="action_item action_swap container">
@@ -43,7 +45,7 @@
                     <label for="">Vị trí 2</label>
                     <input type="text" class="form-control" name="" id="txtViTri2" aria-describedby="helpId" placeholder="">
                 </div>
-                <button type="submit" class="btn btn-success container" id="btnHoanVi" onclick="">Hoán
+                <button type="submit" class="btn btn-success container" id="btnHoanVi" onclick="hoanVi2ViTri()">Hoán
                     vị 2 vị trí</button>
             </div>
             <!-- Thao tác -->
@@ -57,7 +59,6 @@
                         <option value="3">Số nhỏ nhất</option>
                         <option value="4">Số dương nhỏ nhất</option>
                         <option value="5">Số chẵn cuối cùng</option>
-                        <!-- <option value="6">Đổi chỗ 2 giá trị</option> -->
                         <option value="7">Sắp xếp tăng dần</option>
                         <option value="8">Số nguyên tố đầu tiên</option>
                         <option value="9">Đếm số nguyên</option>
@@ -65,7 +66,7 @@
                     </select>
                     <button type="submit" class="btn btn-success container my-3" id="btnThucHien" onclick="thucHienThaoTac()">Thực
                         hiện</button>
-                    <div id="divKetQua">
+                    <div id="divKetQua" class="result">
                         <p id="titleKetQua">Kết quả</p>
                         <span id="spanKetQua"></span>
                     </div>
