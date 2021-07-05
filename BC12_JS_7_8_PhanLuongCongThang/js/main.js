@@ -6,10 +6,9 @@ function queSel(selector) {
 
 
 // Mảng số nguyên
+
 var tblDSSoNguyen = queSel("#tblDSSoNguyen");
 var dSachSo = new Array();
-
-
 
 
 
