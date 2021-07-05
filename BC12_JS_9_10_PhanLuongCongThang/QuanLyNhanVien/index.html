@@ -17,7 +17,6 @@
 
     <!-- Animate -->
     <!-- <link rel="stylesheet" href="css/animate.css"> -->
-
     <!-- My CSS -->
     <link rel="stylesheet" href="css/modal.css">
 
@@ -91,6 +90,7 @@
                             <li><a href="#">Page</a></li>
                             <li><a href="#">Page</a></li>
                             <li><a href="#">Page</a></li>
+                            <li><a href="#">Page</a></li>
                         </ul>
                     </div>
                 </div>
@@ -159,7 +159,6 @@
 
         </div>
     </div>
-
 
     <!-- The Modal -->
     <div class="modal fade" id="myModal">
@@ -255,7 +254,6 @@
                                     <option>Nhân viên</option>
                                 </select>
                             </div>
-
                             <span class="sp-thongbao" id="tbChucVu"></span>
                         </div>
                         <div class="form-group">
@@ -274,8 +272,9 @@
 
                 <!-- Modal footer -->
                 <div class="modal-footer" id="modal-footer">
-                    <button id="btnThemNV" type="button" class="btn btn-success">Thêm người dùng</button>
-                    <button id="btnCapNhat" type="button" class="btn btn-success">Cập nhật</button>
+                    <button id="btnThemNV" type="button" class="btn btn-success">Thêm nhân
+                        viên</button>
+                    <button id="btnCapNhat" type="button" class="btn btn-success" data-dismiss="modal">Cập nhật</button>
                     <button id="btnDong" type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
                 </div>
 
@@ -284,27 +283,28 @@
     </div>
 
 
-    <div class="modal fade" id="mi-modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="comfirmDel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Bạn có chắc chắn muốn xóa nhân viên này không ?
-                    </h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Bạn có chắc chắc muốn xóa nhân viên này không ?</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" id="btnXoaNV" data-dismiss="modal">Xóa</button>
-                    <button type="button" class="btn btn-success" data-dismiss="modal" id="btnThoat">Thoát</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="btnXoaNV">Xóa nhân
+                        viên</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Thoát</button>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="alert" role="alert" id="result"></div>
-
     <!-- Bootstrap -->
     <script src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.easing.min.js"></script>
@@ -332,18 +332,13 @@
             });
         });
     </script>
-    <script type="text/javascript">
-    </script>
-
 
 
     <script src="./js/models/NhanVien.js"></script>
     <script src="./js/models/DanhSachNhanVien.js"></script>
     <script src="./js/models/Validator.js"></script>
     <script src="./js/main.js"></script>
-
-
-
+    <script src="./js/models/LocalStoreage.js"></script>
 </body>
 
 </html>

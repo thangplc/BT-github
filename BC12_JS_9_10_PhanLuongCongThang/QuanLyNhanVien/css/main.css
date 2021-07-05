@@ -1,7 +1,8 @@
 .sp-thongbao {
   color: red;
+  padding: 2px 0;
   margin-left: 2px; 
-  display: none;
+  display: block;
 }
 
 #SapXepGiam{

@@ -1,18 +1,14 @@
-// function getEl(selectors) {
-//     return document.querySelector(selectors);
-// }
-
 function Validator() {
     /* 
         Kiểm tra rỗng
     */
     this.kiemTraRong = function(value, spanID) {
         if (!value) {
-            getEl(spanID).style.display = 'block';
-            getEl(spanID).innerHTML = "(*) Vui lòng không để rỗng.";
+            getEle(spanID).style.display = 'block';
+            getEle(spanID).innerHTML = "(*) Vui lòng không để rỗng.";
             return false;
         } else {
-            getEl(spanID).innerHTML = '';
+            getEle(spanID).innerHTML = '';
             return true;
         }
     };
@@ -21,11 +17,11 @@ function Validator() {
     */
     this.kiemTraTaiKhoan = function(value, min, max, spanID, mess) {
         if (value.length >= min && value.length <= max) {
-            getEl(spanID).innerHTML = '';
+            getEle(spanID).innerHTML = '';
             return true;
         } else {
-            getEl(spanID).style.display = 'block';
-            getEl(spanID).innerHTML = '(*)' + mess;
+            getEle(spanID).style.display = 'block';
+            getEle(spanID).innerHTML = '(*)' + mess;
             return false;
         }
     };
@@ -38,11 +34,11 @@ function Validator() {
             "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$");
 
         if (pattern.test(value)) {
-            getEl(spanID).innerHTML = '';
+            getEle(spanID).innerHTML = '';
             return true;
         }
-        getEl(spanID).style.display = 'block';
-        getEl(spanID).innerHTML = '(*)' + mess;
+        getEle(spanID).style.display = 'block';
+        getEle(spanID).innerHTML = '(*)' + mess;
         return false;
     };
     /* 
@@ -51,11 +47,11 @@ function Validator() {
     this.kiemTraEmail = function(value, spanID, mess) {
         var el = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         if (el.test(value)) {
-            getEl(spanID).innerHTML = '';
+            getEle(spanID).innerHTML = '';
             return true;
         } else {
-            getEl(spanID).style.display = 'block';
-            getEl(spanID).innerHTML = '(*)' + mess;
+            getEle(spanID).style.display = 'block';
+            getEle(spanID).innerHTML = '(*)' + mess;
             return false;
         }
     };
@@ -79,7 +75,7 @@ function Validator() {
             upcaseNote = 'Ít nhất một chữ in hoa. ';
         }
         var specialNote = (specialLeter.test(value)) ? '' : 'Ít nhất một ký tự đặc biệt.';
-        getEl(spanID).innerHTML = lengthNote + numberNote + upcaseNote + specialNote;
+        getEle(spanID).innerHTML = lengthNote + numberNote + upcaseNote + specialNote;
         if (lengthNote === '' && upcaseNote === '' && specialNote === '') {
             return true;
         } else {
@@ -92,11 +88,11 @@ function Validator() {
     this.kiemTraNgay = function(value, spanID) {
         var dateRegex = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/;
         if (dateRegex.test(value)) {
-            getEl(spanID).innerHTML = '';
+            getEle(spanID).innerHTML = '';
             return true;
         } else {
-            getEl(spanID).style.display = 'block';
-            getEl(spanID).innerHTML = '(*) Không đúng định dạng MM/DD/YY';
+            getEle(spanID).style.display = 'block';
+            getEle(spanID).innerHTML = '(*) Không đúng định dạng MM/DD/YY';
             return false;
         }
     };
@@ -105,11 +101,11 @@ function Validator() {
     */
     this.kiemTraLCB = function(value, min, max, spanID, mess) {
         if (value >= min && value <= max) {
-            getEl(spanID).innerHTML = '';
+            getEle(spanID).innerHTML = '';
             return true;
         } else {
-            getEl(spanID).style.display = 'block';
-            getEl(spanID).innerHTML = '(*) ' + mess;
+            getEle(spanID).style.display = 'block';
+            getEle(spanID).innerHTML = '(*) ' + mess;
             return false;
         }
     };
@@ -118,11 +114,11 @@ function Validator() {
     */
     this.kiemTraChucVu = function(value, spanID) {
         if (value === 'Chọn chức vụ') {
-            getEl(spanID).style.display = 'block';
-            getEl(spanID).innerHTML = '(*) Hãy chọn chức vụ cho nhân viên';
+            getEle(spanID).style.display = 'block';
+            getEle(spanID).innerHTML = '(*) Hãy chọn chức vụ cho nhân viên';
             return false;
         } else {
-            getEl(spanID).innerHTML = '';
+            getEle(spanID).innerHTML = '';
             return true;
         }
     };
@@ -131,22 +127,22 @@ function Validator() {
     */
     this.kiemTraGioLam = function(value, min, max, spanID, mess) {
         if (value >= min && value <= max) {
-            getEl(spanID).innerHTML = '';
+            getEle(spanID).innerHTML = '';
             return true;
 
         } else {
-            getEl(spanID).style.display = 'block';
-            getEl(spanID).innerHTML = '(*) ' + mess;
+            getEle(spanID).style.display = 'block';
+            getEle(spanID).innerHTML = '(*) ' + mess;
             return false;
         }
     }
 
 }
 
-function xoaThongBaoKhongHopLe() {
-    var parentEleNote = document.getElmentsByClassName('modal-body')[0];
-    var noteTextLength = parentEleNote.getElmentsByClassName('sp-thongbao').length;
+function deleteContentNote() {
+    var parentEleNote = document.getElementsByClassName('modal-body')[0]
+    var noteTextLength = parentEleNote.getElementsByClassName('sp-thongbao').length;
     for (var i = 0; i < noteTextLength; i++) {
-        parentEleNote.getElmentsByClassName('sp-thongbao')[i].innerHTML = '';
+        parentEleNote.getElementsByClassName('sp-thongbao')[i].innerHTML = '';
     }
 }
